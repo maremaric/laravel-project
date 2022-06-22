@@ -30,7 +30,7 @@ class UserController extends Controller
         // Login
         auth()->login($user);
 
-        return redirect('/')->with('message', 'User created and logged in!');
+        return redirect('/')->with('message', 'User created and logged in');
     }
 
     // Logout User
@@ -41,6 +41,7 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/')->with('message', 'You have been logged out!');
+
     }
 
     // Show Login Form
@@ -56,6 +57,7 @@ class UserController extends Controller
         ]);
 
         if(auth()->attempt($formFields)) {
+            $request->session()->regenerate();
 
             return redirect('/')->with('message', 'You are now logged in!');
         }
