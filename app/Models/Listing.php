@@ -23,4 +23,9 @@ class Listing extends Model
             ;
         }
     }
+
+    // Relationshit To User
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
