@@ -11,7 +11,7 @@
             @endforeach
 
             @else
-            <p>No listings found</p>
+            <p>@lang('auth.no-listings-found')</p>
         @endunless
 
     </div>

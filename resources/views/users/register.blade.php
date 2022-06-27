@@ -2,16 +2,16 @@
     <x-card class="p-10 max-w-lg mx-auto mt-24">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Register
+                @lang('user.register.title')
             </h2>
-            <p class="mb-4">Create an account to post gigs</p>
+            <p class="mb-4">@lang('user.register.paragraph')</p>
         </header>
 
         <form method="POST" action="/users">
             @csrf
             <div class="mb-6">
                 <label for="name" class="inline-block text-lg mb-2">
-                    Name
+                    @lang('user.register.name')
                 </label>
                 <input
                     type="text"
@@ -26,9 +26,9 @@
             </div>
 
             <div class="mb-6">
-                <label for="email" class="inline-block text-lg mb-2"
-                    >Email</label
-                >
+                <label for="email" class="inline-block text-lg mb-2">
+                    @lang('user.register.email')
+                </label>
                 <input
                     type="email"
                     class="border border-gray-200 rounded p-2 w-full"
@@ -44,9 +44,8 @@
             <div class="mb-6">
                 <label
                     for="password"
-                    class="inline-block text-lg mb-2"
-                >
-                    Password
+                    class="inline-block text-lg mb-2">
+                    @lang('user.register.password')
                 </label>
                 <input
                     type="password"
@@ -63,9 +62,8 @@
             <div class="mb-6">
                 <label
                     for="password_confirmation"
-                    class="inline-block text-lg mb-2"
-                >
-                    Confirm Password
+                    class="inline-block text-lg mb-2">
+                    @lang('user.register.confirm-password')
                 </label>
                 <input
                     type="password"
@@ -81,15 +79,15 @@
 
             <div class="mb-6">
                 <button type="submit" class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-                    Sign Up
+                    @lang('user.register.btn.sign-up')
                 </button>
             </div>
 
             <div class="mt-8">
                 <p>
-                    Already have an account?
+                    @lang('user.register.already-have-account')
                     <a href="/login" class="text-laravel">
-                        Login
+                        @lang('user.register.btn.login')
                     </a>
                 </p>
             </div>

@@ -2,9 +2,9 @@
     <x-card class="p-10 max-w-lg mx-auto mt-24">
     <header class="text-center">
         <h2 class="text-2xl font-bold uppercase mb-1">
-            Edit Gig
+            @lang('edit.edit-gig')
         </h2>
-        <p class="mb-4">Edit: {{$listing->title}}</p>
+        <p class="mb-4">@lang('edit.edit') {{$listing->title}}</p>
     </header>
     
     <form method="POST" action="/listings/{{$listing->id}}" enctype="multipart/form-data">
@@ -13,9 +13,9 @@
         <div class="mb-6">
             <label
                 for="company"
-                class="inline-block text-lg mb-2"
-                >Company Name</label
-            >
+                class="inline-block text-lg mb-2">
+                @lang('edit.company-name')
+            </label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -29,9 +29,9 @@
         </div>
     
         <div class="mb-6">
-            <label for="title" class="inline-block text-lg mb-2"
-                >Job Title</label
-            >
+            <label for="title" class="inline-block text-lg mb-2">
+                @lang('edit.job-title')
+            </label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -48,9 +48,9 @@
         <div class="mb-6">
             <label
                 for="location"
-                class="inline-block text-lg mb-2"
-                >Job Location</label
-            >
+                class="inline-block text-lg mb-2">
+                @lang('edit.job-location')
+            </label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -65,9 +65,9 @@
         </div>
     
         <div class="mb-6">
-            <label for="email" class="inline-block text-lg mb-2"
-                >Contact Email</label
-            >
+            <label for="email" class="inline-block text-lg mb-2">
+                @lang('edit.contact-email')
+            </label>
             <input
                 type="email"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -83,9 +83,8 @@
         <div class="mb-6">
             <label
                 for="website"
-                class="inline-block text-lg mb-2"
-            >
-                Website/Application URL
+                class="inline-block text-lg mb-2">
+                @lang('edit.website-application-url')
             </label>
             <input
                 type="text"
@@ -101,7 +100,7 @@
     
         <div class="mb-6">
             <label for="tags" class="inline-block text-lg mb-2">
-                Tags (Comma Separated)
+                @lang('edit.tags-comma-separated')
             </label>
             <input
                 type="text"
@@ -118,7 +117,7 @@
     
         <div class="mb-6">
             <label for="logo" class="inline-block text-lg mb-2">
-                Company Logo
+                @lang('edit.company-logo')
             </label>
             <input
                 type="file"
@@ -140,9 +139,8 @@
         <div class="mb-6">
             <label
                 for="description"
-                class="inline-block text-lg mb-2"
-            >
-                Job Description
+                class="inline-block text-lg mb-2">
+                @lang('edit.job-description')
             </label>
             <textarea
                 class="border border-gray-200 rounded p-2 w-full"
@@ -161,10 +159,10 @@
     
         <div class="mb-6">
             <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-                Edit Gig
+                @lang('edit.btn.edit-gig')
             </button>
     
-            <a href="/" class="text-black ml-4"> Back </a>
+            <a href="/" class="text-black ml-4">@lang('edit.btn.back')</a>
         </div>
     </form>
     </x-card>

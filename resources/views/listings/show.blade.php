@@ -1,7 +1,7 @@
 <x-layout>
 
 <a href="/" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i>
-    Back
+    @lang('auth.show.btn.back')
 </a>
 <div class="mx-4">
     <x-card class="p-10">
@@ -28,21 +28,21 @@
             <div class="border border-gray-200 w-full mb-6"></div>
             <div>
                 <h3 class="text-3xl font-bold mb-4">
-                    Description
+                    @lang('auth.show.description')
                 </h3>
                 <div class="text-lg space-y-6">
                     {{$listing->description}}
                     <a
                         href="mailto:{{$listing->email}}"
                         class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"><i class="fa-solid fa-envelope"></i>
-                        Contact Employer
+                        @lang('auth.show.btn.contact-employer')
                     </a>
 
                     <a
                         href="{{$listing->website}}"
                         target="_blank"
                         class="block bg-black text-white py-2 rounded-xl hover:opacity-80"><i class="fa-solid fa-globe"></i>
-                        VisitWebsite
+                        @lang('auth.show.btn.visit-website')
                     </a>
                 </div>
             </div>
@@ -52,14 +52,14 @@
     <x-card class="mt-4 p-2 flex space-x-6">
         <a href="/listings/{{$listing->id}}/edit">
             <i class="fa-solid fa-pencil"></i>
-            Edit
+            @lang('auth.show.btn.edit')
         </a>
 
         <form method="POST" action="/listings/{{$listing->id}}">
             @csrf
             @method('DELETE')
             <button class="text-red-500"><i class="fa-solid fa-trash"></i>
-                Delete
+                @lang('auth.show.btn.delete')
             </button>
         </form>
     </x-card>

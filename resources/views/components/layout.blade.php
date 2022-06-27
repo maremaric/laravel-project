@@ -25,7 +25,7 @@
                 },
             };
         </script>
-        <title>LaraGigs | Find Laravel Jobs & Projects</title>
+        <title>@lang('layout.head.title')</title>
     </head>
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
@@ -34,12 +34,12 @@
                 @auth
                 <li>
                     <span class="font-bold uppercase">
-                        Welcome {{auth()->user()->name}}
+                        @lang('layout.welcome') {{auth()->user()->name}}
                     </span>
                 </li>
                 <li>
                     <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
-                        Manage Listings
+                        @lang('layout.manage-listings')
                     </a>
                 </li>
                 <li>
@@ -47,19 +47,19 @@
                         @csrf
                         <button type="submit">
                             <i class="fa-solid fa-door-closed"></i>
-                            Logout
+                            @lang('layout.logout')
                         </button>
                     </form>
                 </li>
                 @else
                 <li>
                     <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i>
-                        Register
+                        @lang('layout.register')
                     </a>
                 </li>
                 <li>
                     <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login
+                        @lang('layout.login')
                     </a>
                 </li>
                 @endauth
@@ -69,8 +69,8 @@
         {{$slot}}
     </main>
     <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
-        <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
-        <a href="/listings/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Post Job</a>
+        <p class="ml-2">@lang('footer.copyright') &copy; @lang('footer.all-rights-reserved')</p>
+        <a href="/listings/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">@lang('footer.post-job')</a>
     </footer>
 
     <x-flash-message />
